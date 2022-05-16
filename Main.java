@@ -1,13 +1,21 @@
+package cuentas;
+
 public class Main {
 
     public static void main(String[] args) {
         CCuenta miCuenta;
         double saldoActual;
 
+        operativa_cuenta(1,2000 );
+
+    }
+
+    private static void operativa_cuenta(int operacion, float cantidad) {
+        CCuenta miCuenta;
+        double saldoActual;
         miCuenta = new CCuenta("Juan López","1000-2365-85-1230456789", 2500, 0);
         saldoActual = miCuenta.estado();
         System.out.println("El saldo actual es " + saldoActual);
-
         try {
             System.out.println("Cargo en cuenta");
             miCuenta.retirar(2300);
@@ -15,7 +23,6 @@ public class Main {
         } catch (Exception e) {
             System.out.print("Fallo al retirar");
         }
-        
         try {
             System.out.println("Abono en cuenta");
             miCuenta.ingresar(695);
@@ -23,7 +30,6 @@ public class Main {
         } catch (Exception e) {
             System.out.print("Fallo al ingresar");
         }
-
     }
 
 }
